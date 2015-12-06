@@ -1,0 +1,141 @@
+<div class="container contentContainer center" id="topdiv">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<h1 id="white">Renting A Car</h1>
+			<p class="lead">We Are Ready When You Are Ready</p>
+		</div>
+	</div>
+</div>
+<div id="what">
+	<div class="container-fluid center">
+		<div class="row">
+			<h1>What is e-carRent</h1>
+			<p class="lead">e-car Rental is the rent car service provider around Sri Iskandar, Tronoh, Batu Gajah, Setiawan. We provide the online booking process which available for 24 hours, 7 days a week.</p>
+		</div>
+	</div>	
+</div>
+<div id="why">
+	<div class="container-fluid center">
+		<h1>Why choose us</h1>
+		<div class="row">
+			<div class="col-sm-4">
+				<h2><i class="fa fa-thumbs-up"></i>  Convenient</h2>
+				<p>
+					Book and rent your car with just a few clicks. Just fill up the form and we will sent the car directly to you
+				</p>
+			</div>
+			<div class="col-sm-4">
+				<h2><i class="fa fa-car"></i>Quality</h2>
+				<p>
+					We ensure the quality of the car send to you have perfectly maintenance
+				</p>
+			</div>
+			<div class="col-sm-4">
+				<h2><i class="fa fa-usd"></i>  Cheap</h2>
+				<p>
+					Our price is cheaper compare to another car rental service
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="how" class="container-fluid center">
+	<h1>How it Works</h1>
+	<div class="row">
+		<div class="col-sm-4">
+			<i class="fa fa-hand-o-up fa-5x"></i>
+			<h2>1. Choose your car</h2>
+		</div>
+		<div class="col-sm-4">
+			<i class="fa fa-file fa-5x"></i>
+			<h2>2. Fill up form</h2>
+		</div>
+		<div class="col-sm-4">
+			<i class="fa fa-envelope fa-5x"></i>
+			<h2>Get confirmation email</h2>
+		</div>
+	</div>
+</div>
+<div class="container-fluid center">
+	<h1>Do not hesitate. try our service now</h1>
+        <%= button_to "Rent Now", car_path, :method => "get",target: '_blank', class: "btn btn-success rent"%>
+</div>
+		
+	
+
+
+<div id="testimoni">
+	<div class="container-fluid text-center">
+		<h1>What customers are saying:</h1>
+		<div id="myCarousel" class="carousel slide " data-ride="carousel">
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+				<li data-target="#myCarousel" data-slide-to="2"></li>
+			</ol>
+			<!-- Wrapper for slides -->
+	  		<div class="carousel-inner" role="listbox">
+	    		<div class="item active">	
+	      			<h3>"booking online process is more easier"<br><span style="font-style:normal;">Mus Jo, TTS Actor</span></h3>
+
+	    		</div>
+
+	    		<div class="item">
+	    	
+	      			<h3>"nice and faster service. Worth to try"<br><span style="font-style:normal;">Hazim, Utp Students</span></h3>
+	    		</div>
+
+	    		<div class="item">
+	      			<h3>"good maintenance of car"<br><span style="font-style:normal;">Syairah, Bota Kiri</span></h3>
+	    		</div>
+
+	  		</div>
+		</div>
+	</div>
+</div>
+<div id="collaboration">
+	<div class="container-fluid">
+		<h1 class=" text-center">Collaboration</h1>
+		<p class="lead">Are you interested to generate income with your car? Want us to help promote your car in our website.<br> Contact us now for further detail </p>
+	</div>
+</div>
+<div id="contact">
+	<div class="container">
+		<%= render 'messages/new'%>
+	</div>
+</div>
+<!-- Set height and width with CSS -->
+
+<div id="googleMap" style="height:400px;width:100%;"></div>
+
+<!-- Add Google Maps -->
+<script src="http://maps.googleapis.com/maps/api/js"></script>
+<script>
+var myCenter = new google.maps.LatLng(4.356077, 100.993887);
+
+function initialize() {
+var mapProp = {
+center:myCenter,
+zoom:16,
+scrollwheel:false,
+draggable:false,
+mapTypeId:google.maps.MapTypeId.ROADMAP
+};
+
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+var marker = new google.maps.Marker({
+position:myCenter,
+});
+
+marker.setMap(map);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+<script>
+	var Landingheight = $(window).height() * 60/100;
+    $(".contentContainer").css("min-height",Landingheight);
+</script>

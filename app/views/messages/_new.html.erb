@@ -1,0 +1,51 @@
+<h2 class="text-center">Contact Us</h2>
+<div class="row">
+	<div class="col-sm-5">
+		<p>Contact us and we'll get back to you within 24 hours.</p>
+     	<p><span class="glyphicon glyphicon-map-marker"></span> No.18, Jalan Lakeville 31, Bandar Universiti, 32610,
+Bandar Seri Iskandar, 32161 Seri Iskandar, Perak, Malaysia</p>
+      	<p><span class="glyphicon glyphicon-phone"></span> 017-215486</p>
+      	<p><span class="glyphicon glyphicon-envelope"></span> ecr.rental@gmail.com</p>
+	</div>
+	<div class="col-sm-7">
+		<div class="row">
+			
+			<%= form_for @message do |f| %>
+			  <% if @message.errors.any? %>
+			    <div id="error_explanation">
+			      <h2>
+			        <%= "#{pluralize(@message.errors.count, "error")} prohibited this message from being sent:" %>
+			      </h2>
+
+			      <ul>
+			        <% @message.errors.full_messages.each do |msg| %>
+			          <li><%= msg %></li>
+			        <% end %>
+			      <ul>
+			    </div>
+			<% end %>
+			<div class="col-sm-6 form-group">
+			  <div class="field">
+			    <%= f.label :name %>
+			    <%= f.text_field :name, class: "form-control" %>
+			  </div>
+			</div>
+			<div class="col-sm-6 form-group">
+				<div class="field">
+			    <%= f.label :email %>
+			    <%= f.email_field :email, class: 'form-control' %>
+			  </div>
+			</div>  
+			  <div class="field content">
+			    <%= f.label :content, "Comments/Inquiries" %>
+			    <%= f.text_area :content, class: "form-control" %>
+			  </div>
+			  <br>
+			  <div class="actions content">
+			    <%= f.submit 'Send', class: 'btn btn-primary' %>
+			  </div>
+			<% end %>
+			
+		</div>
+	</div>
+</div>
